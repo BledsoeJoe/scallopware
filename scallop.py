@@ -1,16 +1,28 @@
-#main function file
+#function file for scallop
 from datetime import datetime
+from connection import Connection
 
-class scallop:
+class Scallop:
    def __init__(self, name="default"):
       self.name = name
-      self.last_update = datetime.now()
+      self._last_update = datetime.now()
+      self.connections = {}
 
-   def update(self, name):
+   def update_name(self, name):
       self.name = name
-      self.last_update = datetime.now()
+      self._last_update = datetime.now()
+
+   def add_connection(self, connection):
+      self.connections[connection.name] = connection
+      self._last_update = datetime.now()
+
+   def list_connections(self):
+      for name, conn in self.connections.items():
+         status, ping = conn.check_connection()
+         print(f"Connection Name: {name}, Online: {status}, Latency: {ping}")
+
    def print_to(self):
-      print(f"name: {self.name}\nlast update: {self.last_update}")
+      print(f"name: {self.name}\nlast update: {self._last_update}")
 
 def test() -> None:
    print("Test Succeeded!")
