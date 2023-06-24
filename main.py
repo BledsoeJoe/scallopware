@@ -3,19 +3,17 @@ from connection import Connection
 import time
 
 def main() -> None:
-   test = Scallop("test")
-   test.print_to()
-   time.sleep(3)
-   test.update_name("new name")
-   test.print_to()
+    test = Scallop("test")
+    test.print_to()
+    time.sleep(3)
+    test.update_name("new name")
+    test.print_to()
    
-   conn = Connection("google", "google.com")
-   x = "test except"
-   test.add_connection(conn)
-   test.list_connections()
+ 
+    conn = Connection("google", "google.com")
+    test.add_connection(conn)
+    test.list_connections()
 
 if __name__ == "__main__" :
-    main()
+     main()
 
-
-#test()
