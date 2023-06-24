@@ -1,5 +1,12 @@
 #connection function file
 from ping3 import ping
+"""
+This module creates a connection object to store information about data sources
+
+Classes:
+- Connection: A connection class to store information on added data sources' connections
+
+"""
 
 class Connection:
     def __init__(self, name, url):
@@ -14,5 +21,5 @@ class Connection:
 
         if self._response_time is not None:
             self._online = True
-        
+
         return self._online, self._response_time
