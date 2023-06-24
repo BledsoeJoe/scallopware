@@ -10,6 +10,7 @@ def main() -> None:
    test.print_to()
    
    conn = Connection("google", "google.com")
+   x = "test except"
    test.add_connection(conn)
    test.list_connections()
 
