@@ -13,8 +13,11 @@ class Scallop:
       self._last_update = datetime.now()
 
    def add_connection(self, connection):
-      self.connections[connection.name] = connection
-      self._last_update = datetime.now()
+      if not isinstance(connection, Connection):
+         raise TypeError('Connections added to Scallop must be of type "Connection"')
+      else:
+         self.connections[connection.name] = connection
+         self._last_update = datetime.now()
 
    def list_connections(self):
       for name, conn in self.connections.items():
