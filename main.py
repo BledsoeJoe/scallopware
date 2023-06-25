@@ -4,6 +4,7 @@ from scallop import Scallop
 from connection import Connection
 
 def main() -> None:
+"""Main method"""
     test = Scallop("test")
     test.print_to()
     time.sleep(3)
