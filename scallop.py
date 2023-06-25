@@ -21,20 +21,20 @@ class Scallop:
         self._last_update = datetime.now()
 
     def update_name(self, name) -> None:
-    """
-    Updates name of scallop
-        Args:
-            name (str): new name for scallop
-    """
+        """
+        Updates name of scallop
+            Args:
+                name (str): new name for scallop
+        """
         self.name = name
         self._last_update = datetime.now()
 
     def add_connection(self, connection) -> None:
-    """
-    Adds new connection
-        Args:
-            connection (Connection): connection to be added to scallop
-    """
+        """
+        Adds new connection
+            Args:
+                connection (Connection): connection to be added to scallop
+        """
         if not isinstance(connection, Connection):
             raise TypeError('Connections added to Scallop must be of type "Connection"')
 
@@ -42,13 +42,13 @@ class Scallop:
         self._last_update = datetime.now()
 
     def list_connections(self) -> None:
-    """ Prints all the connections and their statuses """
+        """ Prints all the connections and their statuses """
         for name, conn in self.connections.items():
             status, ping = conn.check_connection()
             print(f"Connection Name: {name}, Online: {status}, Latency: {ping}")
 
     def print_to(self) -> None:
-    """ Prints info about the scallop instance """
+        """ Prints info about the scallop instance """
         print(f"name: {self.name}\nlast update: {self._last_update}")
 
 def test() -> None:

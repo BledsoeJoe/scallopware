@@ -47,4 +47,4 @@ class Connection:
         if name is not None:
             self._name = name
         if url is not None:
-            selft._url = url
+            self._url = url
