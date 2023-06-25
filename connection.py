@@ -37,12 +37,14 @@ class Connection:
 
         return self._online, self._response_time
 
-    def update(self, name=self._name, url=self._url) -> None:
+    def update(self, name=None, url=None) -> None:
         """
         Updates the name and/or url of the connection
             Args:
                 name (str): Updated name
                 url (str): Updated url
         """
-        self._name = name
-        self._url = url
+        if name is not None:
+            self._name = name
+        if url is not None:
+            selft._url = url
