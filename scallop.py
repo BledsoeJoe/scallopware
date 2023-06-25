@@ -50,6 +50,3 @@ class Scallop:
     def print_to(self) -> None:
         """ Prints info about the scallop instance """
         print(f"name: {self.name}\nlast update: {self._last_update}")
-
-def test() -> None:
-    print("Test Succeeded!")
