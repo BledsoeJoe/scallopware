@@ -1,6 +1,7 @@
+"""Main file to test functions"""
+import time
 from scallop import Scallop
 from connection import Connection
-import time
 
 def main() -> None:
     test = Scallop("test")
@@ -15,5 +16,4 @@ def main() -> None:
     test.list_connections()
 
 if __name__ == "__main__" :
-     main()
-
+    main()
