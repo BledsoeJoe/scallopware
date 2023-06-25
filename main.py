@@ -8,8 +8,8 @@ def main() -> None:
     time.sleep(3)
     test.update_name("new name")
     test.print_to()
-   
- 
+
+
     conn = Connection("google", "google.com")
     test.add_connection(conn)
     test.list_connections()
