@@ -1,12 +1,12 @@
-#function file for scallop
-from datetime import datetime
-from connection import Connection
 """
 This module provides the main utility of this library, which filters information out of streams of data
 
 Classes:
 - Scallop: The highest level object that provides the ability to add/modify/remove connections and retrieve information
 """
+from datetime import datetime
+from connection import Connection
+
 
 class Scallop:
     def __init__(self, name="default"):
