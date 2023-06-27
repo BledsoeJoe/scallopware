@@ -5,9 +5,10 @@ Classes:
 - Connection: A connection class to store information on added data sources' connections
 
 """
+from dataclasses import dataclass
 from ping3 import ping
 
-
+@dataclass
 class Connection:
     """
     Class that defines connection to a single data source
@@ -16,12 +17,32 @@ class Connection:
         name (str): Name of the connection
         url (str): The url of the data source
     """
+    _name: str
+    _url: str
+    _online: bool
+    _response_time: float
+
     def __init__(self, name, url):
         self._name = name
         self._url = url
         self._online = False
         self._response_time = None
 
+    def get_name(self) -> str:
+        """ 
+        Getter for connection's name.
+            Returns:
+                str: name of the connection
+        """
+        return self._name
+
+    def get_url(self) -> str:
+        """
+        Getter for connection's url.
+            Returns:
+                str: url of the connection
+        """
+        return self._url
 
     def check_connection(self) -> [bool, float]:
         """
